@@ -3,10 +3,7 @@ package fr.uga.l3miage.library.books;
 import fr.uga.l3miage.library.authors.AuthorDTO;
 import fr.uga.l3miage.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -28,23 +25,28 @@ public class BooksController {
         return null;
     }
 
-    public BookDTO book(Long id) {
+    @GetMapping("/bookId/v1")
+    public BookDTO book(@RequestParam("q") Long id) {
         return null;
     }
 
+    @PostMapping("/NewBook/v1")
     public BookDTO newBook(Long authorId, BookDTO book) {
         return null;
     }
 
+    @PostMapping("/UpdateBook/v1")
     public BookDTO updateBook(Long authorId, BookDTO book) {
         // attention BookDTO.id() doit être égale à id, sinon la requête utilisateur est mauvaise
         return null;
     }
 
+    @PostMapping("/DeleteBook/v1")
     public void deleteBook(Long id) {
 
     }
 
+    @PostMapping("/AddAuthor/v1")
     public void addAuthor(Long authorId, AuthorDTO author) {
 
     }
